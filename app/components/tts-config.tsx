@@ -30,20 +30,22 @@ export function TTSConfigList(props: {
           }
         ></input>
       </ListItem>
-      {/* <ListItem
-        title={Locale.Settings.TTS.Autoplay.Title}
-        subTitle={Locale.Settings.TTS.Autoplay.SubTitle}
-      >
-        <input
-          type="checkbox"
-          checked={props.ttsConfig.autoplay}
-          onChange={(e) =>
-            props.updateConfig(
-              (config) => (config.autoplay = e.currentTarget.checked),
-            )
-          }
-        ></input>
-      </ListItem> */}
+      {props.ttsConfig.enable && (
+        <ListItem
+          title={Locale.Settings.TTS.Autoplay.Title}
+          subTitle={Locale.Settings.TTS.Autoplay.SubTitle}
+        >
+          <input
+            type="checkbox"
+            checked={props.ttsConfig.autoplay}
+            onChange={(e) =>
+              props.updateConfig(
+                (config) => (config.autoplay = e.currentTarget.checked),
+              )
+            }
+          ></input>
+        </ListItem>
+      )}
       <ListItem title={Locale.Settings.TTS.Engine}>
         <Select
           value={props.ttsConfig.engine}
